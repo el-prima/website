@@ -23,7 +23,7 @@ export const contact = {
   whatsapp: "917802800918",
   email: "shreebalajilotusbuildcon@gmail.com",
   // Google Maps listing for "Prima Sky" (pin at 23.0868226, 72.4860787)
-  mapsUrl: "https://www.google.com/maps?q=23.106139,72.519194&entry=gps",
+  mapsUrl: "https://maps.app.goo.gl/z1pnQYirz1kxUsdK7",
   geo: { lat: 23.0868226, lng: 72.4860787 },
   // TODO: replace with the Gujarat RERA registration number once issued.
   rera: null as string | null,
