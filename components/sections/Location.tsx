@@ -27,16 +27,6 @@ export default function Location({ t }: { t: Dict }) {
     { scope: ref, dependencies: [cat], revertOnUpdate: true },
   );
 
-  useGSAP(
-    () => {
-      const mm = gsap.matchMedia();
-      mm.add(MOTION_OK, () => {
-        gsap.fromTo("[data-map] img", { scale: 1.25 }, { scale: 1, ease: "none", scrollTrigger: { trigger: "[data-map]", start: "top bottom", end: "bottom top", scrub: true } });
-      });
-    },
-    { scope: ref },
-  );
-
   return (
     <section ref={ref} id="location" className="section bg-mist">
       <div className="wrap">
@@ -51,10 +41,9 @@ export default function Location({ t }: { t: Dict }) {
         </div>
 
         <div className="mt-14 grid gap-10 lg:grid-cols-[1.2fr_1fr]">
-          <figure data-map data-clip className="relative aspect-[1731/1208] overflow-hidden border border-rule bg-white">
+          <figure data-map className="relative aspect-[1731/1208] overflow-hidden border border-rule bg-white">
             <div data-map-layer className="absolute inset-0">
               <Image src="/brand/location-map.jpg" alt={l.lede} fill sizes="(min-width:1024px) 55vw, 100vw" className="object-cover" />
-              {/* centre of the brochure's red plot, measured in image pixels (280,475 of 1731x1208) */}
               <span className="pulse absolute top-[39.3%] left-[16.2%] z-10 grid h-4 w-4 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-blue text-blue ring-4 ring-white" />
               <span className="absolute top-[39.3%] left-[16.2%] z-10 -translate-x-1/2 -translate-y-[calc(100%+14px)] bg-blue-deep px-2.5 py-1 text-[10px] font-bold tracking-widest whitespace-nowrap text-white uppercase shadow-lg">
                 {t.projectName}
