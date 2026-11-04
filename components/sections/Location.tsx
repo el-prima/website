@@ -51,13 +51,15 @@ export default function Location({ t }: { t: Dict }) {
         </div>
 
         <div className="mt-14 grid gap-10 lg:grid-cols-[1.2fr_1fr]">
-          <figure data-map data-clip className="relative aspect-[1.33/1] overflow-hidden border border-rule bg-white">
-            <Image src="/brand/location-map.jpg" alt={l.lede} fill sizes="(min-width:1024px) 55vw, 100vw" className="object-cover" />
-            {/* site marker over the brochure's red plot */}
-            <span className="pulse absolute top-[39%] left-[15.5%] z-10 grid h-4 w-4 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-blue text-blue ring-4 ring-white" />
-            <span className="absolute top-[31%] left-[17%] z-10 bg-blue-deep px-2.5 py-1 text-[10px] font-bold tracking-widest text-white uppercase shadow-lg">
-              {t.projectName}
-            </span>
+          <figure data-map data-clip className="relative aspect-[1731/1208] overflow-hidden border border-rule bg-white">
+            <div data-map-layer className="absolute inset-0">
+              <Image src="/brand/location-map.jpg" alt={l.lede} fill sizes="(min-width:1024px) 55vw, 100vw" className="object-cover" />
+              {/* centre of the brochure's red plot, measured in image pixels (280,475 of 1731x1208) */}
+              <span className="pulse absolute top-[39.3%] left-[16.2%] z-10 grid h-4 w-4 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-blue text-blue ring-4 ring-white" />
+              <span className="absolute top-[39.3%] left-[16.2%] z-10 -translate-x-1/2 -translate-y-[calc(100%+14px)] bg-blue-deep px-2.5 py-1 text-[10px] font-bold tracking-widest whitespace-nowrap text-white uppercase shadow-lg">
+                {t.projectName}
+              </span>
+            </div>
           </figure>
 
           <div>
